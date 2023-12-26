@@ -55,11 +55,10 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("ZThon_Music")
-                await self.one.join_chat("Zelzal_Music")
-                await self.one.join_chat("AAAl1l")
-                await self.one.join_chat("ZThon")
-                await self.one.join_chat("Zed_Thon")
+                await self.five.join_chat("UI_VM")
+                await self.five.join_chat("T_Y_E_X")
+                await self.five.join_chat("T_Y_E_X")
+                await self.five.join_chat("D_R4F")
             except:
                 pass
             assistants.append(1)
@@ -79,10 +78,10 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("Zelzal_Music")
-                await self.two.join_chat("AAAl1l")
-                await self.two.join_chat("ZThon")
-                await self.two.join_chat("Zed_Thon")
+                await self.five.join_chat("UI_VM")
+                await self.five.join_chat("T_Y_E_X")
+                await self.five.join_chat("T_Y_E_X")
+                await self.five.join_chat("D_R4F")
             except:
                 pass
             assistants.append(2)
