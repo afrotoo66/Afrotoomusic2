@@ -16,11 +16,12 @@ from config import BANNED_USERS
 
 
 @app.on_message(
-    command(["shuffle", "cshuffle"]) & filters.group & ~BANNED_USERS
+    command(["shuffle", "cshuffle"]) & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def admins(Client, message: Message, _, chat_id):
     check = db.get(chat_id)
+    user_mention = message.from_user.mention if message.from_user else "المشـرف"
     if not check:
         return await message.reply_text(_["queue_2"])
     try:
@@ -34,5 +35,5 @@ async def admins(Client, message: Message, _, chat_id):
     random.shuffle(check)
     check.insert(0, popped)
     await message.reply_text(
-        _["admin_16"].format(message.from_user.mention), reply_markup=close_markup(_)
+        _["admin_16"].format(user_mention), reply_markup=close_markup(_)
     )
